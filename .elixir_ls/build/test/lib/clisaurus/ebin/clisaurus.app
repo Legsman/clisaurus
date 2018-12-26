@@ -1,5 +1,6 @@
 {application,clisaurus,
-             [{applications,[kernel,stdlib,elixir,logger,httpoison,floki]},
+             [{applications,[kernel,stdlib,elixir,logger,httpoison,floki,
+                             cli_spinners]},
               {description,"clisaurus"},
               {modules,['Elixir.Clisaurus.CLI']},
               {registered,[]},

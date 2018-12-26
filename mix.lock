@@ -1,5 +1,6 @@
 %{
   "certifi": {:hex, :certifi, "2.4.2", "75424ff0f3baaccfd34b1214184b6ef616d89e420b258bb0a5ea7d7bc628f7f0", [:rebar3], [{:parse_trans, "~>3.3", [hex: :parse_trans, repo: "hexpm", optional: false]}], "hexpm"},
+  "cli_spinners": {:hex, :cli_spinners, "0.1.0", "08d89c6f1840a8927daed48c675ecb2f20c05c855dc2b4b58c2933d393d5e0c9", [:mix], [], "hexpm"},
   "crawlie": {:hex, :crawlie, "1.0.0", "f8cd10159eb11cfb0497baea3e611cf21cf361ff430d40abd929a650dda59c3a", [:mix], [{:flow, "~> 0.12.0", [hex: :flow, repo: "hexpm", optional: false]}, {:gen_stage, "~> 0.12.0", [hex: :gen_stage, repo: "hexpm", optional: false]}, {:httpoison, "~> 0.10.0", [hex: :httpoison, repo: "hexpm", optional: false]}, {:pqueue, "~> 1.5", [hex: :pqueue, repo: "hexpm", optional: false]}], "hexpm"},
   "floki": {:hex, :floki, "0.20.4", "be42ac911fece24b4c72f3b5846774b6e61b83fe685c2fc9d62093277fb3bc86", [:mix], [{:html_entities, "~> 0.4.0", [hex: :html_entities, repo: "hexpm", optional: false]}, {:mochiweb, "~> 2.15", [hex: :mochiweb, repo: "hexpm", optional: false]}], "hexpm"},
   "flow": {:hex, :flow, "0.12.0", "32c5a5f3ff6693e004b6c17a8c64dce2f8cdaf9564912d79427176013a586ab6", [:mix], [{:gen_stage, "~> 0.12.0", [hex: :gen_stage, repo: "hexpm", optional: false]}], "hexpm"},

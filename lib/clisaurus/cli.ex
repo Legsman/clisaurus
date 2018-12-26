@@ -3,14 +3,12 @@ defmodule Clisaurus.CLI do
   @max_results 20
 
   def main(args \\ []) do
+    CliSpinners.spin
+
     args
     |> fetch_data
     |> retrieve_synonyms
     |> IO.puts()
-  end
-
-  defp parse_args({_, word, _}) do
-    List.to_string(word)
   end
 
   defp fetch_data(word) do

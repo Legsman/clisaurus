@@ -1,0 +1,10 @@
+{application,cli_spinners,
+             [{applications,[kernel,stdlib,elixir,logger]},
+              {description,"This module compirises of the loading animations for the CLI- command line interface.   \nThis comprises of 60+ loading animaations.      \nThis is highly useful ind command line applications for loading animations.\n"},
+              {modules,['Elixir.CliSpinners','Elixir.CliSpinners.Animation',
+                        'Elixir.CliSpinners.Spinner',
+                        'Elixir.CliSpinners.Spinners',
+                        'Elixir.CliSpinners.Utils']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {extra_applications,[logger]}]}.
