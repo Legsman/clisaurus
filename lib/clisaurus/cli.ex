@@ -18,9 +18,12 @@ defmodule Clisaurus.CLI do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         body
 
+      {:ok, %HTTPoison.Response{status_code: 404}} ->
+        IO.puts("Not found :(")
+
       # TODO: Handle redirection https://github.com/edgurgel/httpoison/issues/90#issuecomment-153897977
       {:ok, %HTTPoison.Response{status_code: 301}} ->
-        IO.puts("Not found :(")
+        IO.puts("REDIRECTED")
 
       {:error, %HTTPoison.Error{reason: reason}} ->
         IO.inspect(reason)
