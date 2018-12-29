@@ -24,7 +24,6 @@ defmodule Clisaurus.MixProject do
     [
       {:floki, "~> 0.20.0"},
       {:httpoison, "~> 1.4"},
-      {:cli_spinners, "~> 0.1.0"} 
     ]
   end
 end
