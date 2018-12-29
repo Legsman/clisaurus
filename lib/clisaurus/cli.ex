@@ -3,33 +3,32 @@ defmodule Clisaurus.CLI do
   @max_results 20
 
   def main(args \\ []) do
-    CliSpinners.spin
-
     args
     |> fetch_data
-    |> retrieve_synonyms
+    |> parse_html
     |> IO.puts()
   end
 
   defp fetch_data(word) do
     case HTTPoison.get(url(word)) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        body
+        {:ok, body}
+
+      {:ok, %HTTPoison.Response{status_code: 301}} ->
+        {:error, "Word '#{word}' is misspelled, please check your input and try again"}
 
       {:ok, %HTTPoison.Response{status_code: 404}} ->
-        IO.puts("Not found :(")
-
-      # TODO: Handle redirection https://github.com/edgurgel/httpoison/issues/90#issuecomment-153897977
-      {:ok, %HTTPoison.Response{status_code: 301}} ->
-        IO.puts("REDIRECTED")
+        {:error, "Not found :("}
 
       {:error, %HTTPoison.Error{reason: reason}} ->
-        IO.inspect(reason)
+        {:error, reason}
     end
   end
 
-  defp retrieve_synonyms(html) do
-    html
+  defp parse_html({:error, string}), do: string
+
+  defp parse_html({:ok, string}) do
+    string
     |> Floki.find(".synonyms-container a")
     |> Enum.take(@max_results)
     |> Floki.text(sep: "\n")
